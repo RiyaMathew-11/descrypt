@@ -1,5 +1,5 @@
 import torch.nn as nn
-from transformers import BertModel, BertTokenizer
+from transformers import BertModel
 
 
 class SiameseBERT(nn.Module):
@@ -9,15 +9,15 @@ class SiameseBERT(nn.Module):
         self.cos_sim = nn.CosineSimilarity(dim=-1)
 
     def forward(self, input_ids1, attention_mask1, input_ids2, attention_mask2):
-        outputs1 = self.bert(input_ids=input_ids1,
+        output_set_1 = self.bert(input_ids=input_ids1,
                              attention_mask=attention_mask1)  
-        outputs2 = self.bert(input_ids=input_ids2,
+        output_set_2 = self.bert(input_ids=input_ids2,
                              attention_mask=attention_mask2)  
 
-        
-        pooled_output1 = outputs1.last_hidden_state[:, 0]
-        pooled_output2 = outputs2.last_hidden_state[:, 0]
+        # Generates out vectors with needed dims
+        output_vec1 = output_set_1.last_hidden_state[:, 0]
+        output_vec2 = output_set_2.last_hidden_state[:, 0]
 
-        similarity_score = self.cos_sim(pooled_output1, pooled_output2)
+        similarity_score = self.cos_sim(output_vec1, output_vec2)
 
         return similarity_score

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import {
   Container,
-  TextField,
-  Typography,
   Box,
+  TextField,
+  Chip,
+  Typography,
   IconButton,
   Avatar,
-  Chip,
 } from "@mui/material";
 import logo from "./assets/images/descrypt-white.png";
 import SendIcon from "@mui/icons-material/Send";
@@ -20,7 +20,7 @@ export default function ChatbotPage() {
     {
       from: "bot",
       message:
-        "Hello there! I am Descrypt, your self-test bot.\nI will ask you questions based on C programming.\nType start to begin and next to continue.",
+        "Namaste! I am Descrypt, your self-test bot.\nI will ask you questions based on C programming.\nType start to begin and next to continue.",
     },
   ]);
 
@@ -244,7 +244,7 @@ export default function ChatbotPage() {
         >
           <IconButton
             color="primary"
-            onClick={() => (window.location.href = "/")} // Replace "/" with the URL of your main page
+            onClick={() => (window.location.href = "/")}
             sx={{ color: "#8CE78C" }}
           >
             <ArrowBackIcon />
@@ -271,9 +271,7 @@ export default function ChatbotPage() {
           variant="body1"
           align="center"
           sx={{ paddingTop: "20px", fontSize: 15 }}
-        >
-          © 2023 All Rights Reserved
-        </Typography>
+        ></Typography>
       </Box>
     </Box>
   );

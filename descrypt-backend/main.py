@@ -1,7 +1,7 @@
 # app.py
 import torch
 import torch.nn as nn
-from transformers import BertModel, BertTokenizer
+from transformers import BertTokenizer
 from model import SiameseBERT
 from flask import Flask, request, jsonify
 from flask_cors import CORS

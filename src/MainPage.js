@@ -15,7 +15,7 @@ export default function MainPage() {
         minHeight: "100vh",
         alignItems: "center",
         justifyContent: "center",
-        background: "linear-gradient(140deg, #202020 30%, #1cb88b 95%)", // Custom gradient
+        background: "linear-gradient(140deg, #202020 30%, #1cb88b 95%)",
         color: "white",
       }}
     >
@@ -70,7 +70,6 @@ export default function MainPage() {
           align="center"
           sx={{ paddingTop: "20px", fontSize: 15 }}
         >
-          © 2023 All Rights Reserved
         </Typography>
       </Box>
     </Box>
